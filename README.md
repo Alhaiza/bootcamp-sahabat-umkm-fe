@@ -94,7 +94,7 @@ File `.env` digunakan oleh Vite untuk menyuntikkan variabel lingkungan ke aplika
 
 | Variabel | Tipe | Contoh Default | Deskripsi Teknis |
 |---|---|---|---|
-| `VITE_API_BASE_URL` | String URL | `https://backend-production-4c5b.up.railway.app` | Base URL endpoint RESTful API backend yang dikonsumsi oleh aplikasi frontend |
+| `VITE_API_BASE_URL` | String URL | `http://localhost:3000` | Base URL endpoint RESTful API backend yang dikonsumsi oleh aplikasi frontend |
 
 ---
 

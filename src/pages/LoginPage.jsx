@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +15,7 @@ const LoginPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("https://backend-production-4c5b.up.railway.app/login", {
+      .post(`${API_BASE_URL}/login`, {
         email: email,
         password: password,
       })

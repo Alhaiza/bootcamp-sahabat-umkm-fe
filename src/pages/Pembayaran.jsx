@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useEffect, useState } from "react";
 import Dana from "../assets/images/dana.png";
 import GoPay from "../assets/images/gopay.png";
@@ -11,7 +12,7 @@ export default function Pembayaran() {
   const { id } = useParams();
   const [kelas, setKelas] = useState({});
   useEffect(() => {
-    fetch(`https://backend-production-4c5b.up.railway.app/kelas/${id}`, {
+    fetch(`${API_BASE_URL}/kelas/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -42,7 +43,7 @@ export default function Pembayaran() {
       //   setShowModal(true);
       // }, 2000);
 
-      fetch("https://backend-production-4c5b.up.railway.app/transaksi/", {
+      fetch(`${API_BASE_URL}/transaksi/`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

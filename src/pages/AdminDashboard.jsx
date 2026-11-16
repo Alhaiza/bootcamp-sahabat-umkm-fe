@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../App.css";
@@ -11,7 +12,7 @@ function AdminDashboard() {
   const token = Cookies.get("token");
   const fetchData = async () => {
     try {
-      const response = await axios.get("https://backend-production-4c5b.up.railway.app/kelas", {
+      const response = await axios.get(`${API_BASE_URL}/kelas`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -29,7 +30,7 @@ function AdminDashboard() {
   }, []);
 
   const deleteData = async (id) => {
-    await axios.delete(`https://backend-production-4c5b.up.railway.app/kelas/${id}`, {
+    await axios.delete(`${API_BASE_URL}/kelas/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

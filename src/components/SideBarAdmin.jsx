@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useState } from "react";
 import {  Link,useNavigate  } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
@@ -35,7 +36,7 @@ function SideBarAdmin() {
 
   const logout = async()=>{
     try{
-      const response = await axios.get("https://backend-production-4c5b.up.railway.app/logout", {
+      const response = await axios.get(`${API_BASE_URL}/logout`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

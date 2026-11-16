@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useState, useEffect } from "react";
 import Layout from "./Layout";
 import axios from "axios";
@@ -9,7 +10,7 @@ function KategoriAdmin() {
     const token = Cookies.get("token");
     const fetchData = async () => {
         try {
-            const response = await axios.get("https://backend-production-4c5b.up.railway.app/kategori", {
+            const response = await axios.get(`${API_BASE_URL}/kategori`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -26,7 +27,7 @@ function KategoriAdmin() {
     }, []);
 
     const deleteData = async (id) => {
-        await axios.delete(`https://backend-production-4c5b.up.railway.app/kategori/${id}`, {
+        await axios.delete(`${API_BASE_URL}/kategori/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

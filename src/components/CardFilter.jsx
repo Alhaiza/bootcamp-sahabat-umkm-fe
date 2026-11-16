@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -17,7 +18,7 @@ function CardFilter({ course }) {
   ];
   useEffect(() => {
     const checkUserHasBought = async () => {
-      const response = await fetch(`https://backend-production-4c5b.up.railway.app/transaksi/`, {
+      const response = await fetch(`${API_BASE_URL}/transaksi/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

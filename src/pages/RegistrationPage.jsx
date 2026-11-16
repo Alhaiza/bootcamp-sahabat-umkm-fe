@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import  { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +36,7 @@ const RegistrationPage = (req, res) => {
     };
 
     axios
-      .post("https://backend-production-4c5b.up.railway.app/register", formData)
+      .post(`${API_BASE_URL}/register`, formData)
       .then((res) => {
         console.log(`Success` + res);
         navigate("/login");

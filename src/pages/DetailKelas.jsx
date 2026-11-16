@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useEffect, useState } from "react";
 import DeskripsiKelas from "../sections/DeskripsiKelas";
 import ModulKelas from "../sections/ModulKelas";
@@ -13,7 +14,7 @@ export default function DetailKelas() {
   const { id } = useParams();
   const [data, setData] = useState({});
   useEffect(() => {
-    fetch(`https://backend-production-4c5b.up.railway.app/kelas/${id}`, {
+    fetch(`${API_BASE_URL}/kelas/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { PiHandWavingBold } from "react-icons/pi";
 import { FaRegSave } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
@@ -15,7 +16,7 @@ export default function DashboardUser() {
   const [transaksi, setTransaksi] = useState([]);
   const [kelas, setKelas] = useState([]);
   useEffect(() => {
-    fetch(`https://backend-production-4c5b.up.railway.app/transaksi/`, {
+    fetch(`${API_BASE_URL}/transaksi/`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -31,7 +32,7 @@ export default function DashboardUser() {
   }, [userData.id, token]);
 
   useEffect(() => {
-    fetch(`https://backend-production-4c5b.up.railway.app/kelas/`, {
+    fetch(`${API_BASE_URL}/kelas/`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

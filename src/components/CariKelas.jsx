@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import React, { useState, useEffect } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import CardFilter from "./CardFilter";
@@ -15,7 +16,7 @@ const CariKelas = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("https://backend-production-4c5b.up.railway.app/kelas", {
+    fetch(`${API_BASE_URL}/kelas`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

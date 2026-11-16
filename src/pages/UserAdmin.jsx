@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import Layout from "./Layout";
@@ -8,7 +9,7 @@ function UserAdmin() {
 
     const fetchData = async () => {
       try{
-        const response = await axios.get('https://backend-production-4c5b.up.railway.app/user/all',{
+        const response = await axios.get(`${API_BASE_URL}/user/all`,{
           headers: {
             Authorization: `Bearer ${token}`,
           },

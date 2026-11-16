@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useState, useEffect } from "react";
 import Layout from "./Layout";
 import axios from "axios";
@@ -8,7 +9,7 @@ function TransaksiAdmin() {
 const fetchData = async () => {
   
   try{
-    const response = await axios.get('https://backend-production-4c5b.up.railway.app/transaksi',{
+    const response = await axios.get(`${API_BASE_URL}/transaksi`,{
       headers: {
         Authorization: `Bearer ${token}`,
       },

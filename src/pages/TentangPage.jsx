@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 
 import Footer from "../sections/Footer";
 import { IoLocationSharp } from "react-icons/io5";
@@ -15,7 +16,7 @@ function TentangPage() {
   useEffect(() => {
     const checkAuthentication = async () => {
       try{
-        const result = await axios.get(`https://backend-production-4c5b.up.railway.app/login/`, {withCredentials: true});
+        const result = await axios.get(`${API_BASE_URL}/login/`, {withCredentials: true});
 
         const {data} = result.data;
         setAuth (data != null);
@@ -28,7 +29,7 @@ function TentangPage() {
   },[])
 
   //   const login = async () => {
-  //   let result = await axios.get(`https://backend-production-4c5b.up.railway.app/login/`, {withCredentials: true});
+  //   let result = await axios.get(`${API_BASE_URL}/login/`, {withCredentials: true});
   //   let { data} = result.data;
   //   setAuth(data != null); //or conditional state
   // }

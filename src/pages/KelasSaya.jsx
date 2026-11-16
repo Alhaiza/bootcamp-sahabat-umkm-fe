@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useEffect, useState } from "react";
 import KelasSayaCard from "../components/KelasSayaCard";
 import { Link } from "react-router-dom";
@@ -9,7 +10,7 @@ export default function KelasSaya() {
   const [transaksi, setTransaksi] = useState([]);
   const [kelas, setKelas] = useState([]);
   useEffect(() => {
-    fetch(`https://backend-production-4c5b.up.railway.app/transaksi/`, {
+    fetch(`${API_BASE_URL}/transaksi/`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -25,7 +26,7 @@ export default function KelasSaya() {
   }, [userData.id, token]);
 
   useEffect(() => {
-    fetch(`https://backend-production-4c5b.up.railway.app/kelas/`, {
+    fetch(`${API_BASE_URL}/kelas/`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

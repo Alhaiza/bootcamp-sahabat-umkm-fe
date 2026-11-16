@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import Layout from "../pages/Layout";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -33,7 +34,7 @@ function EditDataKelas() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://backend-production-4c5b.up.railway.app/kelas/${id}`, {
+        const response = await axios.get(`${API_BASE_URL}/kelas/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -94,7 +95,7 @@ function EditDataKelas() {
     };
     
     try {
-      const response = await axios.put(`https://backend-production-4c5b.up.railway.app/kelas/${id}`, formData, {
+      const response = await axios.put(`${API_BASE_URL}/kelas/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

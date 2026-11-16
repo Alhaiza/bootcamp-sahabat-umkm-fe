@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import KelasTitle from "../components/KelasTitle";
 import VideoPlayer from "../components/VideoPlayer";
 import DeskripsiKelas from "../sections/DeskripsiKelas";
@@ -12,7 +13,7 @@ export default function HalamanKelas() {
   const [kelas, setKelas] = useState({});
 
   useEffect(() => {
-    fetch(`https://backend-production-4c5b.up.railway.app/kelas/${id}`, {
+    fetch(`${API_BASE_URL}/kelas/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

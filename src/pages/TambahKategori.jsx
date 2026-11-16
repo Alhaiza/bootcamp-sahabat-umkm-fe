@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import Layout from "../pages/Layout";
 import axios from "axios";
 import { useState } from "react";
@@ -25,7 +26,7 @@ function TambahKategori() {
         };
 
         try {
-            const response = await axios.post("https://backend-production-4c5b.up.railway.app/kategori", formData, {
+            const response = await axios.post(`${API_BASE_URL}/kategori`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

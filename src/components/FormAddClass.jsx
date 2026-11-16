@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import Layout from "../pages/Layout";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
@@ -60,7 +61,7 @@ function FormAddClass() {
     };
 
     try {
-      const response = await axios.post("https://backend-production-4c5b.up.railway.app/kelas", formData, {
+      const response = await axios.post(`${API_BASE_URL}/kelas`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

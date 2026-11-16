@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../constants/api.config";
 import { useState, useEffect } from "react";
 import Layout from "./Layout";
 
@@ -5,7 +6,7 @@ function ListKelas() {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     // Fetch data from the "/kelas" endpoint
-    fetch("https://backend-production-4c5b.up.railway.app/kelas")
+    fetch(`${API_BASE_URL}/kelas`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

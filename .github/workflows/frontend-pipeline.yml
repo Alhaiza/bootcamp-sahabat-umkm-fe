@@ -56,3 +56,4 @@ jobs:
           file: sahabat-umkm-fe/docker/Dockerfile
           push: false
           tags: sahabat-umkm-fe:latest
+

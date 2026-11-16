@@ -56,3 +56,4 @@ export class ChaosErrorBoundary extends Component {
 }
 
 export default ChaosErrorBoundary;
+

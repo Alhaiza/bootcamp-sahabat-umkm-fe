@@ -19,3 +19,4 @@ export const formatRupiah = (amount) => {
     minimumFractionDigits: 0,
   }).format(Number(amount));
 };
+

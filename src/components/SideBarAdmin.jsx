@@ -34,20 +34,24 @@ function SideBarAdmin() {
    console.log("menu", menu);
   };
 
-  const logout = async()=>{
-    try{
-      const response = await axios.get(`${API_BASE_URL}/logout`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      console.log(response)
+  const logout = async () => {
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}/logout`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response);
       Cookies.remove("token");
-      navigate("/login")
-    }catch(error){
-      console.log("Error fetching data:", error);
+      navigate("/login");
+    } catch (error) {
+      console.log("Error logging out:", error);
     }
-  }
+  };
   return (
     <div>
       <div className="flex items-center">
